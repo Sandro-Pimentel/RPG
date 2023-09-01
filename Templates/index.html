@@ -7,7 +7,23 @@
     <title> Game </title>
 </head>
 <body>
-    
+    <main class="main">
+        <h1 class="main_title"> The Most General RPG Game... by Sandro </h1>  
+        <section class="main_choice">    
+            <label for="name">
+                <span>
+                    Digite seu nome: 
+                </span>
+                <input type="text" name="name" id="name">
+            </label>
+            <label for="class">
+                <input type="radio" name="class" id="archer"> <span> Arqueiro </span>
+                <input type="radio" name="class" id="knight"> <span> Cavaleiro </span>
+                <input type="radio" name="class" id="mage"> <span> Mago </span>
+            </label>
+            <input type="button" value="Iniciar Jornada" id="btnStart">
+        </section>
+    </main>
     <script src="../Scripts/main.js"></script>
 </body>
 </html>
