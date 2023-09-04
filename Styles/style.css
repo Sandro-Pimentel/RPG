@@ -21,3 +21,8 @@ body {
     display: flex;
     flex-direction: column;
 }
+
+.combat {
+    display: flex;
+    justify-content: space-around;
+}
