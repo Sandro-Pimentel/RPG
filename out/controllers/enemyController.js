@@ -7,13 +7,13 @@ class EnemyController {
     addEnemy(enemy) {
         this._enemies.push(enemy);
     }
-    findEnemy(searchedEnemy, enemiesList) {
+    findEnemy(searchedEnemy) {
         let returnedEnemy = null;
-        enemiesList.forEach(enemy => {
+        this._enemies.forEach(enemy => {
             if (searchedEnemy.toLowerCase() === enemy.name.toLowerCase()) {
                 returnedEnemy = enemy;
+                return returnedEnemy;
             }
-            return returnedEnemy;
         });
         return returnedEnemy;
     }

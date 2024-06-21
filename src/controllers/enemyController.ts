@@ -7,22 +7,22 @@ export default class EnemyController {
         this._enemies = enemies
     }
 
-    public addEnemy(enemy: Enemy) {
+    public addEnemy(enemy: Enemy): void {
         this._enemies.push(enemy)
     }
 
-    public findEnemy(searchedEnemy: string, enemiesList: Enemy[]): Enemy | null {
+    public findEnemy(searchedEnemy: string): Enemy | null {
         let returnedEnemy: Enemy | null = null
-        enemiesList.forEach(enemy => {
+        this._enemies.forEach(enemy => {
             if(searchedEnemy.toLowerCase() === enemy.name.toLowerCase()) {
                 returnedEnemy = enemy
+                return returnedEnemy
             }
-            return returnedEnemy
         })
         return returnedEnemy
     }
 
-    public get enemies() {
+    public get enemies(): ReadonlyArray<Enemy> {
         return this._enemies
     }
 }

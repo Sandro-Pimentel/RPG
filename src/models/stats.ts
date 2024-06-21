@@ -16,7 +16,7 @@ export default class Stats {
 
     constructor(character: Enemy | Player, level: number) {
         this._level = level
-        this._life = character.life + level
+        this._life = character.life + level-1
         this._strength = character.race.strength + Math.floor(level/3)
         this._inteligence = character.race.inteligence + Math.floor(level/5)
         this._speed = character.race.speed + Math.floor(level/10)

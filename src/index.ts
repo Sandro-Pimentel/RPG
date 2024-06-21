@@ -1,11 +1,20 @@
-import Player from "./models/player";
-import findEquipment from "./objects/equipments";
-import findRace from "./objects/races";
-import findWeapon from "./objects/weapons";
-import { enemyController } from "./objects/enemies";
+import Player from "./models/player"
+import EquipmentController from "./controllers/equipmentController"
+import { equipments } from "./objects/equipments"
+import RaceController from "./controllers/raceController"
+import { races } from "./objects/races"
+import WeaponController from "./controllers/weaponController"
+import { weapons } from "./objects/weapons"
+import EnemyController from "./controllers/enemyController"
+import { enemies } from "./objects/enemies"
 
-const player = new Player(1, 'Sandro', 10, findWeapon('shortsword'), null, findRace('Human'));
-const enemy = enemyController.findEnemy('Carl', enemyController.enemies);
+const equipmentController = new EquipmentController(equipments)
+const raceController = new RaceController(races)
+const weaponController = new WeaponController(weapons)
+const enemyController = new EnemyController(enemies)
+
+const player = new Player(1, 'Sandro', 10, weaponController.findWeapon('shortsword'), null, raceController.findRace('Human'))
+const enemy = enemyController.findEnemy('Carl')
 
 console.log(player.stats)
 console.log(enemy?.stats)
