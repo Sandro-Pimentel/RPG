@@ -40,5 +40,32 @@ class Stats {
             this._evasion++;
         }
     }
+    get level() {
+        return this._level;
+    }
+    get life() {
+        return this._life;
+    }
+    get damage() {
+        return this._damage;
+    }
+    get strength() {
+        return this._strength;
+    }
+    get speed() {
+        return this._speed;
+    }
+    get inteligence() {
+        return this._inteligence;
+    }
+    get weight() {
+        return this._weight;
+    }
+    get evasion() {
+        return this._evasion;
+    }
+    get maxWeight() {
+        return this._maxWeight;
+    }
 }
 exports.default = Stats;

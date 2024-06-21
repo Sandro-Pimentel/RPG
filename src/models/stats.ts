@@ -1,4 +1,3 @@
-import Character from "./character"
 import Enemy from "./enemy"
 import Player from "./player"
 
@@ -58,5 +57,41 @@ export default class Stats {
             this._speed++
             this._evasion++
         }
+    }
+
+    public get level() {
+        return this._level
+    }
+
+    public get life() {
+        return this._life
+    }
+
+    public get damage() {
+        return this._damage
+    }
+
+    public get strength() {
+        return this._strength
+    }
+
+    public get speed() {
+        return this._speed
+    }
+
+    public get inteligence() {
+        return this._inteligence
+    }
+
+    public get weight() {
+        return this._weight
+    }
+
+    public get evasion() {
+        return this._evasion
+    }
+
+    public get maxWeight() {
+        return this._maxWeight
     }
 }

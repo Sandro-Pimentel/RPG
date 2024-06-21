@@ -14,4 +14,8 @@ export default class Character {
     public get life() {
         return this._life
     }
+
+    public set life(life: number) {
+        this._life = life
+    }
 }

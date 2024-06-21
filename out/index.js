@@ -12,11 +12,16 @@ const weaponController_1 = __importDefault(require("./controllers/weaponControll
 const weapons_1 = require("./objects/weapons");
 const enemyController_1 = __importDefault(require("./controllers/enemyController"));
 const enemies_1 = require("./objects/enemies");
+const combat_1 = __importDefault(require("./actions/combat"));
 const equipmentController = new equipmentController_1.default(equipments_1.equipments);
 const raceController = new raceController_1.default(races_1.races);
 const weaponController = new weaponController_1.default(weapons_1.weapons);
 const enemyController = new enemyController_1.default(enemies_1.enemies);
 const player = new player_1.default(1, 'Sandro', 10, weaponController.findWeapon('shortsword'), null, raceController.findRace('Human'));
 const enemy = enemyController.findEnemy('Carl');
-console.log(player.stats);
-console.log(enemy === null || enemy === void 0 ? void 0 : enemy.stats);
+if (enemy !== null) {
+    const combat = new combat_1.default(player, enemy);
+    combat.attack();
+    console.log(combat.attack().avoid);
+    console.log(combat.attack().wasSlain);
+}

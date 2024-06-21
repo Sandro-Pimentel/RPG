@@ -11,5 +11,8 @@ class Character {
     get life() {
         return this._life;
     }
+    set life(life) {
+        this._life = life;
+    }
 }
 exports.default = Character;
