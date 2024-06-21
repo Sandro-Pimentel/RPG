@@ -1,4 +1,4 @@
-import Equipment from "../models/static/equipment";
+import Equipment from "../models/equipment";
 
 const equipments: Equipment[] = []
 equipments.push(new Equipment('Basic Helmet', 1, 0, {bodyPart: "Head"}));

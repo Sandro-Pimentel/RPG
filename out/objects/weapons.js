@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const weapon_1 = __importDefault(require("../models/static/weapon"));
+const weapon_1 = __importDefault(require("../models/weapon"));
 const weapons = [];
 weapons.push(new weapon_1.default('Shortsword', 2, 10, { type: "Melee", arm: "Right-Handed" }));
 weapons.push(new weapon_1.default('Longsword', 4, 20, { type: "Melee", arm: "Right-Handed" }));

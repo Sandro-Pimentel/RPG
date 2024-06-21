@@ -1,4 +1,4 @@
-import Race from "../models/static/race";
+import Race from "../models/race";
 
 const races: Race[] = []
 races.push(new Race('Human', 3, 3, 3));

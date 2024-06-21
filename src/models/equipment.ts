@@ -1,4 +1,4 @@
-import EquipmentType from "./equipmentType"
+import EquipmentType from "../types/equipmentType"
 
 export default class Equipment {
     private _eqName: string

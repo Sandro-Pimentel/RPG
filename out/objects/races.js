@@ -3,7 +3,7 @@ var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const race_1 = __importDefault(require("../models/static/race"));
+const race_1 = __importDefault(require("../models/race"));
 const races = [];
 races.push(new race_1.default('Human', 3, 3, 3));
 races.push(new race_1.default('Skeleton', 1, 4, 0));

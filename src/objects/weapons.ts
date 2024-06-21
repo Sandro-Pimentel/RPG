@@ -1,4 +1,4 @@
-import Weapon from "../models/static/weapon";
+import Weapon from "../models/weapon";
 
 const weapons: Weapon[] = []
 weapons.push(new Weapon('Shortsword', 2, 10, {type: "Melee", arm: "Right-Handed"}))

@@ -1,4 +1,4 @@
-import WeaponType from "./armType"
+import WeaponType from "../types/armType"
 
 export default class Weapon {
     private _wName: string
