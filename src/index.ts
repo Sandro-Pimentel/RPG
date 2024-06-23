@@ -7,6 +7,7 @@ import WeaponController from "./controllers/weaponController"
 import { weapons } from "./objects/weapons"
 import EnemyController from "./controllers/enemyController"
 import { enemies } from "./objects/enemies"
+import AttackAction from "./actions/attackAction"
 import Combat from "./actions/combat"
 
 const equipmentController = new EquipmentController(equipments)
@@ -18,8 +19,8 @@ const player = new Player(1, 'Sandro', 10, weaponController.findWeapon('shortswo
 const enemy = enemyController.findEnemy('Carl')
 
 if(enemy !== null) {
-    const combat = new Combat(player, enemy)
-    combat.attack()
-    console.log(combat.attack().avoid)
-    console.log(combat.attack().wasSlain)
+    const enemysTurn = new AttackAction(player, enemy)
+    const playersTurn = new AttackAction(enemy, player)
+    const combat = new Combat(playersTurn, enemysTurn)
+    combat.combat()
 }
