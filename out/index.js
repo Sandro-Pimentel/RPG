@@ -19,7 +19,7 @@ const raceController = new raceController_1.default(races_1.races);
 const weaponController = new weaponController_1.default(weapons_1.weapons);
 const enemyController = new enemyController_1.default(enemies_1.enemies);
 const player = new player_1.default(1, 'Sandro', 10, weaponController.findWeapon('shortsword'), null, raceController.findRace('Human'));
-const enemy = enemyController.findEnemy('Carl');
+const enemy = enemyController.findEnemy('Gary');
 if (enemy !== null) {
     const enemysTurn = new attackAction_1.default(player, enemy);
     const playersTurn = new attackAction_1.default(enemy, player);
