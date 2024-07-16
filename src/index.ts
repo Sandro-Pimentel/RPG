@@ -16,7 +16,8 @@ const weaponController = new WeaponController(weapons)
 const enemyController = new EnemyController(enemies)
 
 const player = new Player(1, 'Sandro', 10, weaponController.findWeapon('shortsword'), null, raceController.findRace('Human'))
-const enemy = enemyController.findEnemy('Gary')
+const enemy = enemyController.randomEnemy()
+
 
 if(enemy !== null) {
     const enemysTurn = new AttackAction(player, enemy)

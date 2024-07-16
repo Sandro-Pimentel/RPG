@@ -22,6 +22,12 @@ export default class EnemyController {
         return returnedEnemy
     }
 
+    public randomEnemy(): Enemy {
+        let randomNumber = Math.floor(Math.random() * this._enemies.length) 
+        let returnedEnemy = this._enemies[randomNumber]
+        return returnedEnemy
+    }
+
     public get enemies(): ReadonlyArray<Enemy> {
         return this._enemies
     }
