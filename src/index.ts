@@ -18,15 +18,23 @@ const enemyController = new EnemyController(enemies)
 
 const playerCreation = new PlayerCreation(weapons, equipments, races)
 const player = playerCreation.createPlayer()
-const enemy = enemyController.randomEnemy()
 
-if(enemy !== null && player !== undefined) {
-    console.log(player.stats)
-    console.log(player.race.raceName)
-    console.log(player.weapon?.wName)
-    console.log(player.equipment?.eqName)
-    const enemysTurn = new AttackAction(player, enemy)
-    const playersTurn = new AttackAction(enemy, player)
-    const combat = new Combat(playersTurn, enemysTurn)
-    combat.combat()
+//Combat doesn't consider the defense of the attacked 
+
+if(player !== undefined) {
+    let wins = -1
+    while(player.life > 0) {
+        const enemy = enemyController.randomEnemy()
+        console.log(player.life)
+        console.log(player.stats)
+        console.log(player.race.raceName)
+        console.log(player.weapon?.wName)
+        console.log(player.equipment?.eqName)
+        const enemysTurn = new AttackAction(player, enemy)
+        const playersTurn = new AttackAction(enemy, player)
+        const combat = new Combat(playersTurn, enemysTurn)
+        combat.combat()
+        wins++
+    }
+    console.log(`WINS: ${wins}`)
 }

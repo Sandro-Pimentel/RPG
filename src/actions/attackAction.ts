@@ -11,6 +11,7 @@ export default class AttackAction {
         this._attacking = attacking
     }
 
+    //Combat doesn't consider the defense of the attacked
     public doDamage(): number {
         let baseDamage = this._attacking.stats.damage
         const variableDamage = []

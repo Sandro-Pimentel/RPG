@@ -17,6 +17,11 @@ class EnemyController {
         });
         return returnedEnemy;
     }
+    randomEnemy() {
+        let randomNumber = Math.floor(Math.random() * this._enemies.length);
+        let returnedEnemy = this._enemies[randomNumber];
+        return returnedEnemy;
+    }
     get enemies() {
         return this._enemies;
     }

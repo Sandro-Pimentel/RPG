@@ -25,13 +25,13 @@ export default class PlayerCreation {
             this.listWeapons()
             let weaponIndex = this.prompt.getNumber(`Choose your weapon: `)
             let weapon = this.weapons[weaponIndex-1]
-            this.listEquipments()
-            let equipmentIndex = this.prompt.getNumber(`Choose your equipment: `)
-            let equipment = this.equipments[equipmentIndex-1]
+            // this.listEquipments()
+            // let equipmentIndex = this.prompt.getNumber(`Choose your equipment: `)
+            // let equipment = this.equipments[equipmentIndex-1]
             this.listRaces()
             let raceIndex = this.prompt.getNumber(`Choose your race: `)
             let race = this.races[raceIndex-1]
-            let player = new Player(1, name, 10, weapon, equipment, race)
+            let player = new Player(1, name, 10, weapon, null, race)
             return player
         }
     }
@@ -73,7 +73,7 @@ export default class PlayerCreation {
             races.forEach((race, index) => {
                 console.log(`------------------------------------`)
                 console.log(`${index+1} - ${race.raceName}`)
-                console.log(`____________________________________`)
+                console.log(`------------------------------------`)
                 console.log(`Strength | ${race.strength}`)
                 console.log(`Speed | ${race.speed}`)
                 console.log(`Intelligence | ${race.inteligence}`)
