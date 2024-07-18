@@ -11,13 +11,23 @@ export default class AttackAction {
         this._attacking = attacking
     }
 
+    public doDamage(): number {
+        let baseDamage = this._attacking.stats.damage
+        const variableDamage = []
+        variableDamage.push(baseDamage, baseDamage+1, baseDamage-1, baseDamage-2)
+        let index = Math.floor(Math.random() * variableDamage.length)
+        let dealtDamage = variableDamage[index]
+        return dealtDamage
+    }
+
     public attack(): ResultAttackType {
         const avoidPct = this._attacked.stats.evasion
         let attackResult: ResultAttackType
         let willAvoid = Math.round(Math.random()*100) <= avoidPct
         if(!willAvoid){
-            console.log(`${this._attacking.name} dealt ${this.attacking.stats.damage} damage to ${this._attacked.name}`)
-            this._attacked.life-= this._attacking.stats.damage
+            let damage = this.doDamage()
+            console.log(`${this._attacking.name} dealt ${damage} damage to ${this._attacked.name}`)
+            this._attacked.life-= damage
             if(this._attacked.life <= 0) {
                 console.log(`${this._attacked.name} was slain`)
                 attackResult = {avoid: false, wasSlain: true}
