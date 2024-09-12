@@ -71,6 +71,10 @@ export default class Stats {
         return this._damage
     }
 
+    public get defense() {
+        return this._defense
+    }
+
     public get strength() {
         return this._strength
     }

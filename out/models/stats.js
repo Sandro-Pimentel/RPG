@@ -49,6 +49,9 @@ class Stats {
     get damage() {
         return this._damage;
     }
+    get defense() {
+        return this._defense;
+    }
     get strength() {
         return this._strength;
     }

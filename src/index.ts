@@ -19,8 +19,6 @@ const enemyController = new EnemyController(enemies)
 const playerCreation = new PlayerCreation(weapons, equipments, races)
 const player = playerCreation.createPlayer()
 
-//Combat doesn't consider the defense of the attacked 
-
 if(player !== undefined) {
     let wins = -1
     while(player.life > 0) {
@@ -29,7 +27,7 @@ if(player !== undefined) {
         console.log(player.stats)
         console.log(player.race.raceName)
         console.log(player.weapon?.wName)
-        console.log(player.equipment?.eqName)
+        //console.log(player.equipment?.eqName)
         const enemysTurn = new AttackAction(player, enemy)
         const playersTurn = new AttackAction(enemy, player)
         const combat = new Combat(playersTurn, enemysTurn)

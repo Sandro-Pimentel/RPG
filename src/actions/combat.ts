@@ -59,6 +59,50 @@ export default class Combat {
         }
     }
 
+    private enemyGoesFirst(): void {
+        console.log(`Enemy goes first`)
+            let turn = true
+            while(turn) {
+                console.log(`Enemy attacks`)
+                const resultAttackEnemy = this._attackActionEnemy.attack()
+                this.prompt.getText(``)
+                if(!resultAttackEnemy.wasSlain) {
+                    console.log(`Player attacks`)
+                    const resultAttackPlayer = this._attackActionPlayer.attack()
+                    this.prompt.getText(``)
+                    if(resultAttackPlayer.wasSlain) {
+                        turn = false
+                        console.log(`END: YOU WIN!`)
+                    }
+                } else {
+                    turn = false
+                    console.log(`END: YOU LOSE!`)
+                }
+            }
+    }
+
+    private playerGoesFirst(): void {
+        console.log(`Player goes first`)
+            let turn = true
+            while(turn) {
+                console.log(`Player attacks`)
+                const resultAttackPlayer = this._attackActionPlayer.attack()
+                this.prompt.getText(``)
+                if(!resultAttackPlayer.wasSlain){
+                    console.log(`Enemy attacks`)
+                    const resultAttackEnemy = this._attackActionEnemy.attack()
+                    this.prompt.getText(``)
+                    if(resultAttackEnemy.wasSlain) {
+                        turn = false
+                        console.log(`END: YOU LOSE!`)
+                    }
+                } else {
+                    turn = false
+                    console.log(`END: YOU WIN!`)
+                }
+            }
+    }
+
     public get attackActionPlayer() {
         return this._attackActionPlayer
     }
