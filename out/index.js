@@ -2,7 +2,6 @@
 var __importDefault = (this && this.__importDefault) || function (mod) {
     return (mod && mod.__esModule) ? mod : { "default": mod };
 };
-var _a;
 Object.defineProperty(exports, "__esModule", { value: true });
 const equipmentController_1 = __importDefault(require("./controllers/equipmentController"));
 const equipments_1 = require("./objects/equipments");
@@ -21,15 +20,14 @@ const weaponController = new weaponController_1.default(weapons_1.weapons);
 const enemyController = new enemyController_1.default(enemies_1.enemies);
 const playerCreation = new playerCreation_1.default(weapons_1.weapons, equipments_1.equipments, races_1.races);
 const player = playerCreation.createPlayer();
-//Combat doesn't consider the defense of the attacked
 if (player !== undefined) {
     let wins = -1;
     while (player.life > 0) {
         const enemy = enemyController.randomEnemy();
-        console.log(player.life);
-        console.log(player.stats);
-        console.log(player.race.raceName);
-        console.log((_a = player.weapon) === null || _a === void 0 ? void 0 : _a.wName);
+        //console.log(player.life)
+        //console.log(player.stats)
+        //console.log(player.race.raceName)
+        //console.log(player.weapon?.wName)
         //console.log(player.equipment?.eqName)
         const enemysTurn = new attackAction_1.default(player, enemy);
         const playersTurn = new attackAction_1.default(enemy, player);

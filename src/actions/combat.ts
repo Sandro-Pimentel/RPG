@@ -20,94 +20,62 @@ export default class Combat {
         
         if(playerGoesFirst) {
             console.log(`Player goes first`)
+            let turn = true
             while(turn) {
-                console.log(`Player attacks`)
-                const resultAttackPlayer = this._attackActionPlayer.attack()
-                this.prompt.getText(``)
-                if(!resultAttackPlayer.wasSlain){
-                    console.log(`Enemy attacks`)
-                    const resultAttackEnemy = this._attackActionEnemy.attack()
-                    this.prompt.getText(``)
-                    if(resultAttackEnemy.wasSlain) {
-                        turn = false
-                        console.log(`END: YOU LOSE!`)
-                    }
-                } else {
-                    turn = false
-                    console.log(`END: YOU WIN!`)
-                }
-            }
+                turn = this.playerGoesFirst();
+            } 
         } else {
             console.log(`Enemy goes first`)
+            let turn = true
             while(turn) {
-                console.log(`Enemy attacks`)
-                const resultAttackEnemy = this._attackActionEnemy.attack()
-                this.prompt.getText(``)
-                if(!resultAttackEnemy.wasSlain) {
-                    console.log(`Player attacks`)
-                    const resultAttackPlayer = this._attackActionPlayer.attack()
-                    this.prompt.getText(``)
-                    if(resultAttackPlayer.wasSlain) {
-                        turn = false
-                        console.log(`END: YOU WIN!`)
-                    }
-                } else {
-                    turn = false
-                    console.log(`END: YOU LOSE!`)
-                }
+                turn = this.enemyGoesFirst();
             }
         }
     }
-
-    private enemyGoesFirst(): void {
-        console.log(`Enemy goes first`)
-            let turn = true
-            while(turn) {
+    
+    private playerGoesFirst(): boolean {
+            console.log(`Player attacks`)
+            const resultAttackPlayer = this._attackActionPlayer.attack()
+            this.prompt.getText("");
+            if(!resultAttackPlayer.wasSlain){
                 console.log(`Enemy attacks`)
                 const resultAttackEnemy = this._attackActionEnemy.attack()
-                this.prompt.getText(``)
-                if(!resultAttackEnemy.wasSlain) {
-                    console.log(`Player attacks`)
-                    const resultAttackPlayer = this._attackActionPlayer.attack()
-                    this.prompt.getText(``)
-                    if(resultAttackPlayer.wasSlain) {
-                        turn = false
-                        console.log(`END: YOU WIN!`)
-                    }
-                } else {
-                    turn = false
+                this.prompt.getText("");
+                if(resultAttackEnemy.wasSlain) {
                     console.log(`END: YOU LOSE!`)
-                }
+                    return false
+                    }
+            } else {
+                    console.log(`END: YOU WIN!`)
+                    return false
             }
-    }
-
-    private playerGoesFirst(): void {
-        console.log(`Player goes first`)
-            let turn = true
-            while(turn) {
+            return true
+        }
+        
+        private enemyGoesFirst(): boolean {
+            console.log(`Enemy attacks`)
+            const resultAttackEnemy = this._attackActionEnemy.attack()
+            this.prompt.getText("");
+            if(!resultAttackEnemy.wasSlain) {
                 console.log(`Player attacks`)
                 const resultAttackPlayer = this._attackActionPlayer.attack()
-                this.prompt.getText(``)
-                if(!resultAttackPlayer.wasSlain){
-                    console.log(`Enemy attacks`)
-                    const resultAttackEnemy = this._attackActionEnemy.attack()
-                    this.prompt.getText(``)
-                    if(resultAttackEnemy.wasSlain) {
-                        turn = false
-                        console.log(`END: YOU LOSE!`)
-                    }
-                } else {
-                    turn = false
+                this.prompt.getText("");
+                if(resultAttackPlayer.wasSlain) {
                     console.log(`END: YOU WIN!`)
+                    return false
                 }
+            } else {
+                console.log(`END: YOU LOSE!`)
+                return false
             }
-    }
-
-    public get attackActionPlayer() {
-        return this._attackActionPlayer
-    }
-
-    public get attackActionEnemy() {
-        return this._attackActionEnemy
-    }
+            return true
+        }
+        
+        public get attackActionPlayer() {
+            return this._attackActionPlayer
+        }
+        
+        public get attackActionEnemy() {
+            return this._attackActionEnemy
+        }
 }

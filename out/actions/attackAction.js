@@ -5,7 +5,6 @@ class AttackAction {
         this._attacked = attacked;
         this._attacking = attacking;
     }
-    //Combat doesn't consider the defense of the attacked
     attack() {
         const avoidPct = this._attacked.stats.evasion;
         let attackResult;
