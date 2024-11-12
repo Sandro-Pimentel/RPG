@@ -1,5 +1,5 @@
 # RPG
-Repositório destinado ao desenvolvimento baseado em um código backend em js. Código JavaScript disponível na branch [base.](https://github.com/Sandro-Pimentel/RPG/edit/main/README.md)
+Repositório destinado ao desenvolvimento baseado em um código backend em js. Código JavaScript disponível na branch [base.](https://github.com/Sandro-Pimentel/RPG/tree/base)
 
 > _💻 Status do projeto: Finalizado._
 
