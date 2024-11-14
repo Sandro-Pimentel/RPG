@@ -1,0 +1,4 @@
+Passive - Passives for races
+Critical - Attribute of critical chance and critical damage
+New Actions - New actions in addition to Attack, like block, run or use item
+New Items - New items and a function to switch your starter weapon
